@@ -1,0 +1,349 @@
+@import "syntax-variables";
+
+atom-text-editor, :host {
+  background-color: #181818;
+
+  color: @syntax-text-color;
+  .wrap-guide {
+    background-color: @syntax-wrap-guide-color;
+  }
+
+  .indent-guide {
+    color: @syntax-indent-guide-color;
+  }
+
+
+  .invisible-character {
+    color: @syntax-invisible-character-color;
+  }
+  .wrap-guide {
+       opacity: .05;
+   }
+  .gutter {
+    background-color: #242424;
+    color: white;
+    font-weigth:bold;
+
+    .line-number {
+      &.cursor-line {
+        background-color: @gutter-select-line-alien;
+        color: @gutter-select-line-color-alien;
+
+      }
+
+      &.cursor-line-no-selection {
+        color: @gutter-select-line-color-active-alien
+      }
+    }
+  }
+
+  .gutter .line-number.folded,
+  .gutter .line-number:after,
+  .fold-marker:after {
+    color: @gutter-select-line-number-alien;
+  }
+
+  .invisible {
+    color: @syntax-text-color;
+  }
+
+  .cursor {
+    color: @syntax-cursor-color;
+  }
+
+  .selection .region {
+    background-color: @gutter-select-line-number-alien;
+    color:black;
+  }
+}
+
+atom-text-editor .search-results .marker .region,
+:host .search-results .marker .region {
+  background-color: transparent;
+  border: 1px solid @syntax-result-marker-color;
+}
+
+atom-text-editor .search-results .marker.current-result .region,
+:host .search-results .marker.current-result .region {
+  border: 1px solid @syntax-result-marker-color-selected;
+}
+//esta linea es un comentario
+.comment {
+  color: @light-gray;
+  background-color: @dark-pink;
+  font-size:12px;
+  padding:2px 10px 2px 10px;
+}
+
+
+.keyword {
+  color: @yellow;
+
+  &.control {
+    color:white;
+  }
+
+  &.operator {
+    color:@light-green-alien;
+  }
+
+  &.other.special-method {
+    color: @blue;
+  }
+
+  &.other.unit {
+    color: @green-alien-dark;//orange
+  }
+}
+
+.storage {
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: none;
+  color: #b8dd3f;
+  text-decoration: normal;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px #7ac822 , 0 0 70px #7ac822 , 0 0 80px #7ac822 , 0 0 100px #7ac822 ;
+  -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.bracket-matcher {
+   border-bottom: 1px solid @light-green-alien;
+   position: absolute;
+   border: 1px solid rgba(98, 212, 37, 0.7);
+   background-color: rgba(98, 212, 37, 0.7);
+   border-radius: 70%;
+   color:black;
+}
+
+.constant {
+  color: @yellow;
+
+  &.character.escape {
+    color: @cyan;
+  }
+
+  &.numeric {
+    color: @yellow;
+  }
+
+  &.other.color {
+    color: @cyan;
+  }
+
+  &.other.symbol {
+    color: @green;
+  }
+}
+
+
+.variable {
+  color: white;
+
+  &.interpolation {
+    color: darken(@red, 10%);
+  }
+
+  &.parameter.function {
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: none;
+    color: #b8dd3f;
+    text-decoration: normal;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px #7ac822 , 0 0 70px #7ac822 , 0 0 80px #7ac822 , 0 0 100px #7ac822 ;
+    -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  }
+}
+
+.invalid.illegal {
+  background-color: @red;
+  color: @syntax-background-color;
+}
+
+.string {
+  color: @green;
+  &.regexp {
+    color: @cyan;
+
+    .source.ruby.embedded {
+      color: @orange;
+    }
+  }
+
+  &.other.link {
+    color: @red;
+  }
+}
+
+.punctuation {
+  &.definition {
+    &.comment {
+      color: @light-green-alien;
+    }
+
+    &.string,
+    &.variable,
+    &.parameters,
+    &.array {
+      color: @syntax-text-color;
+    }
+
+    &.heading,
+    &.identity {
+      color: @blue;
+    }
+
+    &.bold {
+      color: @light-orange;
+      font-weight: bold;
+    }
+
+    &.italic {
+      color: @purple;
+      font-style: italic;
+    }
+  }
+
+  &.section.embedded {
+    color: darken(@green-alien-dark, 10%);
+  }
+
+}
+
+.support {
+  &.class {
+    color: @green-alien-dark;
+  }
+
+  &.function  {
+    color:@medium-green;
+
+    &.any-method {
+      color: @blue;
+    }
+  }
+}
+
+.entity {
+  &.name.function {
+    color: @medium-green;
+  }
+  &.name.type {
+    color: @green-alien-dark;
+    text-decoration: underline;
+  }
+
+  &.other.inherited-class {
+    color: @green;
+  }
+  &.name.class, &.name.type.class {
+    color: @green-alien-dark;
+  }
+
+  &.name.section {
+    color: @blue;
+  }
+
+  &.name.tag {
+    color: @red;
+    text-decoration: underline;
+  }
+
+  &.other.attribute-name {
+    color: @light-green-alien;//orange cambia color clases
+
+    &.id {
+      color: @blue;
+    }
+  }
+}
+
+.meta {
+  &.class {
+    color: @light-orange;
+  }
+
+  &.link {
+    color: @orange;
+  }
+
+  &.require {
+    color: @blue;
+  }
+
+  &.selector {
+    color: @green-alien-dark;
+  }
+
+  &.separator {
+    background-color: @gray;
+    color: @syntax-text-color;
+  }
+}
+
+.none {
+  color: @syntax-text-color;
+}
+
+.markup {
+  &.bold {
+    color: @orange;
+    font-weight: bold;
+  }
+
+  &.changed {
+    color: @yellow;
+  }
+
+  &.deleted {
+    color: @red;
+  }
+
+  &.italic {
+    color: @yellow;
+    font-style: italic;
+  }
+
+  &.heading .punctuation.definition.heading {
+    color: @blue;
+  }
+
+  &.inserted {
+    color: @green;
+  }
+
+  &.list {
+    color: @red;
+  }
+
+  &.quote {
+    color: @orange;
+  }
+
+  &.raw.inline {
+    color: @green;
+  }
+}
+
+.source.gfm .markup {
+  -webkit-font-smoothing: auto;
+  &.heading {
+    color: @green;
+  }
+}
+
+atom-text-editor[mini] .scroll-view,
+:host([mini]) .scroll-view {
+  padding-left: 1px;
+}
