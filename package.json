@@ -8,7 +8,7 @@
     "theme",
     "alien"
   ],
-  "repository": "https://github.com/atom/theme-alien-syntax",
+  "repository": "https://github.com/hyperDevk/hyper-alien-syntax",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
