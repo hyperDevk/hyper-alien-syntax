@@ -1,8 +1,11 @@
 @import "syntax-variables";
 
+
 atom-text-editor, :host {
-  background-color: #181818;
-  
+  background: #181818;
+  background:url(https://cloud.githubusercontent.com/assets/9166224/12528332/173d2b48-c158-11e5-99a9-9946b0168a99.jpg);
+  background-size: cover;
+
   color: @syntax-text-color;
   .wrap-guide {
     background-color: @syntax-wrap-guide-color;
@@ -23,6 +26,7 @@ atom-text-editor, :host {
     background-color: #242424;
     color: white;
     font-weigth:bold;
+    margin-right: 10px;
 
     .line-number {
       &.cursor-line {
@@ -111,15 +115,13 @@ atom-text-editor .search-results .marker.current-result .region,
   -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
   transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
 }
-
+/* close bracket */
 .bracket-matcher {
    border-bottom: 1px solid @light-green-alien;
    position: absolute;
-   border: 1px solid rgba(98, 212, 37, 0.7);
-   background-color: rgba(98, 212, 37, 0.7);
-   border-radius: 70%;
    color:black;
 }
+
 
 .constant {
   color: @yellow;
@@ -234,8 +236,31 @@ atom-text-editor .search-results .marker.current-result .region,
     }
   }
 }
+/* values of css */
+.constant.property-value.css{
+  color:@light-green-alien;
+}
+.constant.other.rgb-value.css{
+  color: @yellow;
+  background-color: rgb(36, 36, 36);
+  border:1px solid rgb(75, 75, 75);
+  padding:2px;
+}
 
 .entity {
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #b8dd3f;
+  text-shadow: 0 0 5px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px #7ac822 , 0 0 70px #7ac822 , 0 0 80px #7ac822 , 0 0 100px #7ac822 ;
+  -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+
+
   &.name.function {
     color: @medium-green;
   }
@@ -346,4 +371,38 @@ atom-text-editor .search-results .marker.current-result .region,
 atom-text-editor[mini] .scroll-view,
 :host([mini]) .scroll-view {
   padding-left: 1px;
+}
+.entity.name.tag{
+  text-decoration: none;
+}
+/* html */
+.entity.name.tag.structure.any.html{
+  color:white;
+}
+/* script */
+.entity.name.tag.script.html{
+  color:@light-green-alien;
+}
+
+/* li */
+.entity.name.tag.html{
+  color:white;
+}
+
+
+.entity.other.attribute-name.id.html{
+  color:white;
+}
+
+
+
+/* less */
+
+.variable.other.less{
+  color:white;
+  text-shadow: 0 0 5px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px #7ac822 , 0 0 70px #7ac822 , 0 0 80px #7ac822 , 0 0 100px #7ac822 ;
+  -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
 }
