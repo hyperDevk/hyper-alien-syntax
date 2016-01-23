@@ -14,4 +14,4 @@ Also in gutter and gutter line number to see easily
 
 ### Install
 
-Go to __Settings > Install__ then select __Themes__ and search __hyper alien theme__, __download__ both __ui and syntax__.
+Go to __Settings > Install__ then select __Themes__ and search __hyper alien theme__, __download__ both __ui and syntax__ .
